@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile Card</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/profile-cards.js" defer></script>
     <style>
       .profile-card {
         width: 300px;
@@ -15,67 +16,5 @@
   <body>
     <!-- Container für die Karten – wird per JS befüllt -->
     <div id="output" class="d-flex flex-wrap"></div>
-
-    <script>
-      // div#output aus dem DOM holen – hier werden die Karten reingeschrieben
-      const outputEl = document.getElementById('output');
-
-      // Baut den HTML-String für eine Profilkarte
-      // Destructuring mit Defaults direkt im Parameter:
-      const generatePersonData = ({
-        firstName = '[FIRSTNAME]',  // kein firstName → Platzhalter
-        lastName = '[LASTNAME]',    // kein lastName → Platzhalter
-        hobbies = [],               // keine hobbies → leeres Array
-        age,                        // kein Default → undefined falls nicht übergeben
-      }) => {
-        // HTML-String Stück für Stück aufbauen
-        let html = `<div class="card profile-card m-2">`;
-        html += `<div class="card-body">`;
-
-        // Name immer anzeigen
-        html += `<h5 class="card-title">${firstName} ${lastName}</h5>`;
-
-        // Alter nur anzeigen wenn vorhanden (Ternary-Operator)
-        html += age
-          ? `<p class="card-text">Person is ${age} years old.</p>`
-          : '';  // kein Alter → nichts anhängen
-
-        // Hobbies nur anzeigen wenn mindestens eines vorhanden
-        if (hobbies.length > 0) {
-          html += `<p class="card-text">Person has the following hobbies:</p>`;
-          html += `<ul class="list-group list-group-flush">`;
-
-          // map → jedes Hobby in ein li-Element umwandeln → Array
-          // join('') → Array zu einem String zusammenkleben
-          html += hobbies
-            .map((hobby) => `<li class="list-group-item">${hobby}</li>`)
-            .join('');
-
-          html += `</ul>`;
-        }
-
-        // card schließen und fertigen HTML-String zurückgeben
-        html += `</div></div>`;
-        return html;
-      };
-
-      // Ruft generatePersonData auf und fügt das Ergebnis ins DOM ein
-      const createProfileCard = (person) => {
-        const cardHTML = generatePersonData(person);  // HTML bauen
-        outputEl.innerHTML += cardHTML;               // ans div anhängen
-      };
-
-      // Person als Objekt mit allen Eigenschaften
-      const person1 = {
-        firstName: 'John',
-        lastName: 'Wick',
-        age: 51,
-        hobbies: ['guns', 'dogs', 'cars'],
-      };
-
-      createProfileCard(person1);  // alle Felder vorhanden
-      createProfileCard({ firstName: 'Jane', lastName: 'Doe', age: 23 });  // keine hobbies
-      createProfileCard({ firstName: 'Joe', lastName: 'Doe' });  // kein age, keine hobbies
-    </script>
   </body>
 </html>
