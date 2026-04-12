@@ -1,4 +1,4 @@
-# 🟨 JS Mini Projects
+# 🧱 JS Mini Projects
 Eine Sammlung kleiner aber vollständiger JavaScript-Mini-Projekte – entstanden beim Lernen im Rahmen der Frontend Developer Zertifizierung JavaScript.
 
 🚧 Work in Progress  
