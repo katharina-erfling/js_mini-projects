@@ -9,10 +9,14 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 ## 📁 Projektstruktur
 ```
 /
-├── profile-cards/
-│   └── index.html
-└── delay-button/
-    └── index.html
+├── delay-button/
+│   ├── js/
+│   │   └── button.js
+│   └── button.html
+└── profile-cards/
+    ├── js/
+    │   └── profile-cards.js
+    └── profilecards.html
 ```
 
 ---
