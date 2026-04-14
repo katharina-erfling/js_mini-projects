@@ -1,4 +1,4 @@
-# 🟨 JS Mini Projects
+# 🧱 JS Mini Projects
 Eine Sammlung kleiner aber vollständiger JavaScript-Mini-Projekte – entstanden beim Lernen im Rahmen der Frontend Developer Zertifizierung JavaScript.
 
 🚧 Work in Progress  
@@ -9,10 +9,19 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 ## 📁 Projektstruktur
 ```
 /
+├── delay-button/
+│   ├── js/
+│   │   └── button.js
+│   └── button.html
 ├── profile-cards/
-│   └── index.html
-└── delay-button/
-    └── index.html
+│   ├── js/
+│   │   └── profile-cards.js
+│   └── profilecards.html
+└── chat/
+    ├── style/
+    │   └── style.css
+    └── chat.html
+    └── chat.js
 ```
 
 ---
@@ -41,12 +50,25 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 - Doppelklick-Schutz per `disabled`
 - Bootstrap 5 für das Layout
 
+### 💬 Chat
+
+> 🔒 **Block-Scoping mit `{}`** – der gesamte Code ist in einem Block gekapselt, keine globalen Variablen
+
+> 🔍 **Live-Suche per `keyup`** – Mitglieder werden bei jeder Tasteneingabe gefiltert und per `classList` hervorgehoben
+
+- Live-Suche in der Mitgliederliste – Treffer werden per CSS-Klasse highlighted
+- `$$()` als Kurzschreibweise für `querySelectorAll()` mit `Array.from()`
+- `filter()` + `forEach()` für das Highlighting
+- Admin-Mitglied per CSS-Klasse und `::after`-Pseudo-Element hervorgehoben
+- CSS Grid Layout für Chat-Fenster und Seitenleiste
+
 ---
 
 ## 🛠️ Technologien
 - **HTML5** – semantisches Markup
-- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`
-- **Bootstrap 5** – Card-Layout, Button-Styling
+- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener
+- **CSS3** – CSS Grid, `::after`, `classList`-basiertes Highlighting
+- **Bootstrap 5** – Card-Layout, Button-Styling (Profile Cards & Delay Button)
 
 ---
 
