@@ -37,6 +37,7 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 - Konditionelles Rendering – Alter und Hobbies werden nur angezeigt wenn vorhanden
 - `map().join('')` zum Aufbauen der Hobby-Liste als HTML-String
 - Bootstrap 5 für das Card-Layout
+
   <br>
 
 ### ⏱️ Delay Button
