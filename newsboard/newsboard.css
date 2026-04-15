@@ -1,0 +1,235 @@
+/* Reset — entfernt alle Standard-Abstände */
+* {
+  margin: 0;
+}
+
+/* Basis-Setup — Schriftgröße und Hintergrundverlauf */
+html {
+  font-size: 100%;
+  padding: 0;
+  background-attachment: fixed;
+  background-image: -webkit-linear-gradient(top, #eef0f2, #d3d5d9);
+  background-image: -moz-linear-gradient(top, #eef0f2, #d3d5d9);
+  background-image: linear-gradient(to bottom, #eef0f2, #d3d5d9);
+}
+
+/* Basis-Schrift und Layout */
+body {
+  color: #333;
+  font-size: 1em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: left;
+  margin: 1em;
+  padding: 0;
+}
+
+/* Abstand unter Überschriften und Absätzen */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+}
+
+/* Zeilenhöhe und automatische Silbentrennung */
+p {
+  line-height: 1.5em;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+/* letzter Absatz ohne Abstand nach unten */
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Link-Styling */
+a {
+  color: #2f83e8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Fett und kursiv */
+strong, b { font-weight: bold; }
+em, i { font-style: italic; }
+
+/* Hilfklassen für Float-Layout */
+.float_left { float: left; }
+.float_right { float: right; }
+
+/* Deaktiviertes Element — ausgegraut und kein Zeiger */
+.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Benachrichtigungs-Badge — rote Zahl oben links */
+.message_number {
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1em;
+  position: absolute;
+  top: -0.5em;
+  left: -0.5em;
+  display: block;
+  padding-top: 0.3em;
+  min-width: 2em;
+  height: 2em;
+  box-sizing: border-box;
+  cursor: default;
+  background-color: #ea2314;
+  background-image: linear-gradient(to bottom, #f78f91, #c50404);
+  border: 2px solid #fff;
+  border-radius: 1em;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Äußerer Container des Newsboards — Papier-Optik mit Bild */
+.newsboard_wrapper {
+  margin: 0 auto 2em auto;
+  padding: 13px 0 0 17px;
+  max-width: 550px;
+  position: relative;
+  background: url(images/sheets.png) no-repeat;
+}
+
+/* Büroklammer-Bild oben rechts */
+.newsboard_wrapper:before {
+  content: url(images/paperclip.png);
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  z-index: 1;
+}
+
+/* Inneres Newsboard — weißes Papier mit Linien */
+.newsboard_wrapper .newsboard {
+  padding: 29px 1.25rem 4rem 1.25rem;
+  min-height: 20em;
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  background-image: linear-gradient(#dddddd, #ffffff 1px);
+  background-position: 0 1.3em;
+  background-size: 100% 1.5em;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Schließen-Button oben rechts */
+.newsboard_wrapper .newsboard .close_button {
+  color: #777;
+  font-size: 1.2em;
+  text-decoration: none;
+  line-height: 1em;
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  display: block;
+}
+
+.newsboard_wrapper .newsboard .close_button:hover {
+  color: #444;
+}
+
+/* Footer-Text im Newsboard — grau und klein */
+.newsboard_wrapper .newsboard .newsboard_footer {
+  color: #999;
+  font-size: 0.8em;
+}
+
+/* Navigationsleiste unten — Pfeile und Fortschrittsbalken */
+.newsboard_wrapper .newsboard .paging_bar {
+  font-size: 1.8em;
+  padding: 0 1.25rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+  white-space: nowrap;
+}
+
+/* Navigations-Links links und rechts */
+.newsboard_wrapper .newsboard .paging_bar .float_left a,
+.newsboard_wrapper .newsboard .paging_bar .float_right a {
+  color: #777;
+  text-decoration: none;
+}
+
+.newsboard_wrapper .newsboard .paging_bar .float_left a { margin-right: 0.3em; }
+.newsboard_wrapper .newsboard .paging_bar .float_right a { margin-left: 0.3em; }
+
+/* Fortschrittsbalken — zentriert, 40% Breite */
+.newsboard_wrapper .newsboard .paging_bar .progressbar {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+}
+
+/* Fortschrittsbalken — Basis-Styling */
+.newsboard_wrapper .newsboard .paging_bar progress {
+  appearance: none;
+  vertical-align: 0;
+  color: #2f83e8;
+  width: 100%;
+  height: 0.6rem;
+  border-style: none;
+  padding: 0;
+  background-color: #eee;
+  border-radius: 0.3rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Fortschrittsbalken — blauer Füllstand (webkit) */
+.newsboard_wrapper .newsboard .paging_bar progress::-webkit-progress-value {
+  border-radius: 0.3rem;
+  background-color: #2f83e8;
+  background-image: linear-gradient(to bottom, #8bbaf2, #176acd);
+}
+
+/* Fortschrittsbalken — blauer Füllstand (firefox) */
+.newsboard_wrapper .newsboard .paging_bar progress::-moz-progress-bar {
+  border-radius: 0.3rem;
+  background-color: #2f83e8;
+  background-image: linear-gradient(to bottom, #8bbaf2, #176acd);
+}
+
+/* Überschriften im Newsboard — dünn und leicht gesperrt */
+.newsboard_wrapper .newsboard .newsboard_content h1,
+.newsboard_wrapper .newsboard .newsboard_content h2 {
+  font-weight: normal;
+  font-family: 'Helvetica Neue Light', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.newsboard_wrapper .newsboard .newsboard_content h1 { font-size: 1.75em; }
+
+/* h2 — blau und etwas kleiner */
+.newsboard_wrapper .newsboard .newsboard_content h2 {
+  color: #2f83e8;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+
+/* Leerer Inhalt — Platzhaltertext und Icon */
+.newsboard_wrapper .newsboard .newsboard_content:empty {
+  color: #999;
+  font-size: 1.15em;
+  text-align: center;
+  padding-top: 10.5rem;
+  background: url(images/empty.png) no-repeat center 3.75rem;
+}
+
+/* Text der angezeigt wird wenn kein Inhalt vorhanden */
+.newsboard_wrapper .newsboard .newsboard_content:empty:after {
+  content: 'Keine neuen Mitteilungen.';
+}
