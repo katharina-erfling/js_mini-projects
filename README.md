@@ -78,11 +78,12 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 
 > 🔢 **Dynamisches Badge** – `message_number` wird aus `messages.length` gelesen statt hardcoded
 
+> 📊 **Fortschrittsbalken** – `<progress>`-Element wird synchron mit der aktuellen Nachrichtennummer aktualisiert – `max` und `value` werden dynamisch gesetzt
+
 - Nachrichten-Viewer mit Vor/Zurück Navigation per Klick und Tastatur
 - `init()` als Einstiegspunkt – registriert alle Event Listener
 - Block-Scoping mit `{}` – keine globalen Variablen
 - Nachrichten als HTML-Strings in einem Array gespeichert
-- 🚧 Work in Progress
 
 ---
 
