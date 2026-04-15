@@ -17,11 +17,15 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 │   ├── js/
 │   │   └── profile-cards.js
 │   └── profilecards.html
-└── chat/
-    ├── style/
-    │   └── style.css
-    └── chat.html
-    └── chat.js
+├── chat/
+│   ├── style/
+│   │   └── style.css
+│   ├── chat.html
+│   └── chat.js
+└── newsboard/
+    ├── newsboard.html
+    ├── newsboard.js
+    └── newsboard.css
 ```
 
 ---
@@ -38,7 +42,7 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 - `map().join('')` zum Aufbauen der Hobby-Liste als HTML-String
 - Bootstrap 5 für das Card-Layout
 
-  <br>
+<br>
 
 ### ⏱️ Delay Button
 
@@ -52,7 +56,7 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 - Doppelklick-Schutz per `disabled`
 - Bootstrap 5 für das Layout
 
-  <br>
+<br>
 
 ### 💬 Chat
 
@@ -66,12 +70,26 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 - Admin-Mitglied per CSS-Klasse und `::after`-Pseudo-Element hervorgehoben
 - CSS Grid Layout für Chat-Fenster und Seitenleiste
 
+<br>
+
+### 📰 Newsboard
+
+> ⌨️ **Tastaturnavigation** – Pfeiltasten zum Blättern, `Alt` + Pfeiltaste zur ersten/letzten Nachricht
+
+> 🔢 **Dynamisches Badge** – `message_number` wird aus `messages.length` gelesen statt hardcoded
+
+- Nachrichten-Viewer mit Vor/Zurück Navigation per Klick und Tastatur
+- `init()` als Einstiegspunkt – registriert alle Event Listener
+- Block-Scoping mit `{}` – keine globalen Variablen
+- Nachrichten als HTML-Strings in einem Array gespeichert
+- 🚧 Work in Progress
+
 ---
 
 ## 🛠️ Technologien
-- **HTML5** – semantisches Markup
-- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener
-- **CSS3** – CSS Grid, `::after`, `classList`-basiertes Highlighting
+- **HTML5** – semantisches Markup, `<progress>`-Element
+- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener, Tastaturevents
+- **CSS3** – CSS Grid, `::after`, `classList`-basiertes Highlighting, `progress`-Styling
 - **Bootstrap 5** – Card-Layout, Button-Styling (Profile Cards & Delay Button)
 
 ---
