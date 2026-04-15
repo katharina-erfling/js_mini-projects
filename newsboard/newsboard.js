@@ -3,6 +3,8 @@
 {
   // Einstiegspunkt — zeigt die erste Nachricht beim Laden der Seite
   const init = () => {
+    $('#messages_progress').value = 1;
+    $('#messages_progress').max = messages.length;
     showFirstMessage();
     showMessageCount();
     // click Event an die vor und zurück zeichen binden + zusätzlich die zur ersten und letzten Seite
@@ -76,6 +78,7 @@
   // messageNumber - 1 weil Arrays bei 0 beginnen, Nachrichten aber bei 1 gezählt werden
   const showMessageByNumber = (messageNumber) => {
     $('.newsboard_content').innerHTML = messages[messageNumber - 1];
+    $('#messages_progress').value = currentMessageNumber;
   };
 
   // die drei Nachrichten als HTML-Strings
