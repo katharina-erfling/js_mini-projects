@@ -1,19 +1,12 @@
 'use strict';
 
 {
-  // Einstiegspunkt
+  // Einstiegspunkt — zeigt die erste Nachricht beim Laden der Seite
   const init = () => {
-
-    // Fortschrittsbalken initialisieren — setzt max und Startwert
-    initProgressbar();
-
-    //zeigt die erste Nachricht beim Laden der Seite
+    $('#messages_progress').value = 1;
+    $('#messages_progress').max = messages.length;
     showFirstMessage();
-
-    //Dynamisches Auslesen der Gesamtzahl der Nachrichten
     showMessageCount();
-
-
     // click Event an die vor und zurück zeichen binden + zusätzlich die zur ersten und letzten Seite
     $('[title=next]').addEventListener('click', nextMessage);
     $('[title=prev]').addEventListener('click', prevMessage);
@@ -55,45 +48,29 @@
     $('.message_number').textContent = messages.length;
   };
 
-// Installieren der Progressbar
-  const initProgressbar = () => {
-  progressbar().max = messages.length;
-  progressbar().value = 1;
-};
-
-// erhöht die Nummer der aktuellen Nachricht
-const incCurrentMessageNumber = () => (progressbar().value += 1);
-
-// verringert die Nummer der aktuellen Nachricht
-const decCurrentMessageNumber = () => (progressbar().value -= 1);
-
-// setzt Nummer der aktuellen Nachricht auf Anfang zurück
-const setCurrentMessageNumberToFirstMessage = () => (progressbar().value = 1);
-
-// setzt Nummer der aktuellen Nachricht aufs Ende
-const setCurrentMessageNumberToLastMessage = () => (progressbar().value = progressbar().max);
-
   // vorwärts blättern — preventDefault verhindert dass der Link die URL aufruft
   const nextMessage = (event) => {
-    showMessageByNumber(incCurrentMessageNumber());
+    if (currentMessageNumber === messages.length) return;
+    showMessageByNumber(currentMessageNumber += 1);
     if (event) event.preventDefault();
   };
 
   // zurück blättern — preventDefault verhindert dass der Link die URL aufruft
   const prevMessage = (event) => {
-    showMessageByNumber(decCurrentMessageNumber());
+    if (currentMessageNumber === 1) return;
+    showMessageByNumber(currentMessageNumber -= 1);
     if (event) event.preventDefault();
   };
 
   // zur ersten Nachricht springen
   const firstMessage = (event) => {
-    showMessageByNumber(setCurrentMessageNumberToFirstMessage());
+    showMessageByNumber(currentMessageNumber = 1);
     if (event) event.preventDefault();
   };
 
   // zur letzten Nachricht springen
   const lastMessage = (event) => {
-    showMessageByNumber(setCurrentMessageNumberToLastMessage());
+    showMessageByNumber(currentMessageNumber = messages.length);
     if (event) event.preventDefault();
   };
 
@@ -101,28 +78,10 @@ const setCurrentMessageNumberToLastMessage = () => (progressbar().value = progre
   // messageNumber - 1 weil Arrays bei 0 beginnen, Nachrichten aber bei 1 gezählt werden
   const showMessageByNumber = (messageNumber) => {
     $('.newsboard_content').innerHTML = messages[messageNumber - 1];
-
-    if (messageNumber === 1) {
-      $('[title=first]').disabled = true;
-      $('[title=prev]').disabled = true;
-    }
-    else {
-      $('[title=first]').disabled = false;
-      $('[title=prev]').disabled = false;      
-    }
-
-    if (messageNumber === messages.length) {
-      $('[title=next]').disabled = true;
-      $('[title=last]').disabled = true;      
-    }
-    else {
-      $('[title=next]').disabled = false;
-      $('[title=last]').disabled = false;      
-    }
-
+    $('#messages_progress').value = currentMessageNumber;
   };
 
-  // die Nachrichten als HTML-Strings
+  // die drei Nachrichten als HTML-Strings
   const messages = [
     `<h1>Tutors are on a strike!!!</h1>
     <h2>All assignmnent are automatically graded with 0 points</h2>
@@ -151,9 +110,7 @@ const setCurrentMessageNumberToLastMessage = () => (progressbar().value = progre
   const $ = (qs) => document.querySelector(qs);
   const $$ = (qs) => Array.from(document.querySelectorAll(qs));
 
-  // gibt das Fortschrittsbalken-Element zurück
-  const progressbar = () => $('#messages_progress');
-
+  let currentMessageNumber = 1;
 
   init(); // startet alles
 }
