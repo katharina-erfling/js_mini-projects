@@ -80,16 +80,21 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 
 > 📊 **Fortschrittsbalken** – `<progress>`-Element wird synchron mit der aktuellen Nachrichtennummer aktualisiert – `max` und `value` werden dynamisch gesetzt
 
+> 🔘 **disabled-State für Navigation** – Vor/Zurück-Buttons deaktivieren sich automatisch an erster und letzter Nachricht
+
+> 🎯 **`progressbar()` als Getter** – statt direktem DOM-Zugriff wird das Element über eine Funktion abgerufen – sauber und wiederverwendbar
+
 - Nachrichten-Viewer mit Vor/Zurück Navigation per Klick und Tastatur
 - `init()` als Einstiegspunkt – registriert alle Event Listener
 - Block-Scoping mit `{}` – keine globalen Variablen
 - Nachrichten als HTML-Strings in einem Array gespeichert
+- Navigation auf semantische `<button>`-Elemente umgestellt
 
 ---
 
 ## 🛠️ Technologien
-- **HTML5** – semantisches Markup, `<progress>`-Element
-- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener, Tastaturevents
+- **HTML5** – semantisches Markup, `<progress>`-Element, `<button>` für Navigation
+- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener, Tastaturevents, `disabled`
 - **CSS3** – CSS Grid, `::after`, `classList`-basiertes Highlighting, `progress`-Styling
 - **Bootstrap 5** – Card-Layout, Button-Styling (Profile Cards & Delay Button)
 
