@@ -26,11 +26,15 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 │   ├── newsboard.html
 │   ├── newsboard.js
 │   └── newsboard.css
-└── product-management/
+├── product-management/
+│   ├── index.html
+│   ├── products.css
+│   ├── product_list.js
+│   └── product_manager.js
+└── cuteycat/
     ├── index.html
-    ├── products.css
-    ├── product_list.js
-    └── product_manager.js
+    ├── cuteycat.css
+    └── cuteycat.js
 ```
 
 ---
@@ -111,11 +115,24 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 - DOM-Elemente (`tr`, `td`) werden per `createElement` aufgebaut
 - Zwei JS-Dateien: Daten (`product_list.js`) und Logik (`product_manager.js`) getrennt
 
+<br>
+
+### 🐱 Cuteycat
+
+> 🔁 **`cloneNode(true)`** – das komplette Listenelement inkl. Bild und Name wird geklont und in die Favoritenliste eingefügt – kein HTML neu aufbauen nötig
+
+> 🛡️ **Duplikatschutz & Limit** – Guard Clauses verhindern doppelte Einträge und begrenzen die Auswahl auf maximal 3 Katzen
+
+- Katzen per Klick zur Favoritenliste hinzufügen
+- Klick auf Favorit entfernt ihn wieder
+- Duplikatschutz per Namensvergleich
+- Maximal 3 Favoriten möglich
+
 ---
 
 ## 🛠️ Technologien
 - **HTML5** – semantisches Markup, `<progress>`-Element, `<button>` für Navigation
-- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener, Tastaturevents, `disabled`, `createElement`, `appendChild`, `insertBefore`, `closest()`
+- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener, Tastaturevents, `disabled`, `createElement`, `appendChild`, `insertBefore`, `closest()`, `cloneNode()`
 - **CSS3** – CSS Grid, `::after`, `classList`-basiertes Highlighting, `progress`-Styling
 - **Bootstrap 5** – Card-Layout, Button-Styling (Profile Cards & Delay Button)
 
