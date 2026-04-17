@@ -22,10 +22,15 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 │   │   └── style.css
 │   ├── chat.html
 │   └── chat.js
-└── newsboard/
-    ├── newsboard.html
-    ├── newsboard.js
-    └── newsboard.css
+├── newsboard/
+│   ├── newsboard.html
+│   ├── newsboard.js
+│   └── newsboard.css
+└── product-management/
+    ├── index.html
+    ├── products.css
+    ├── product_list.js
+    └── product_manager.js
 ```
 
 ---
@@ -90,11 +95,27 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 - Nachrichten als HTML-Strings in einem Array gespeichert
 - Navigation auf semantische `<button>`-Elemente umgestellt
 
+<br>
+
+### 🗂️ Product Management
+
+> 🏭 **Button-Factory Pattern** – `buildButton()` erstellt alle Aktions-Buttons (Löschen, Hoch, Runter) mit Symbol, CSS-Klasse und Handler in einem Aufruf – keine Wiederholung
+
+> 🎯 **`closest('tr')`** – der geklickte Button findet seine eigene Tabellenzeile selbst, kein Index-Tracking nötig
+
+> ↕️ **DOM-basiertes Sortieren** – Zeilen werden per `insertBefore()` verschoben statt das Array neu zu rendern
+
+- Produktliste aus separater Datei (`product_list.js`) wird beim Laden in die Tabelle gerendert
+- Neue Produkte per Eingabefeld hinzufügen
+- Zeilen löschen, nach oben und nach unten verschieben
+- DOM-Elemente (`tr`, `td`) werden per `createElement` aufgebaut
+- Zwei JS-Dateien: Daten (`product_list.js`) und Logik (`product_manager.js`) getrennt
+
 ---
 
 ## 🛠️ Technologien
 - **HTML5** – semantisches Markup, `<progress>`-Element, `<button>` für Navigation
-- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener, Tastaturevents, `disabled`
+- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener, Tastaturevents, `disabled`, `createElement`, `appendChild`, `insertBefore`, `closest()`
 - **CSS3** – CSS Grid, `::after`, `classList`-basiertes Highlighting, `progress`-Styling
 - **Bootstrap 5** – Card-Layout, Button-Styling (Profile Cards & Delay Button)
 
