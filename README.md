@@ -31,10 +31,13 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 │   ├── products.css
 │   ├── product_list.js
 │   └── product_manager.js
-└── cuteycat/
+├── cuteycat/
+│   ├── index.html
+│   ├── cuteycat.css
+│   └── cuteycat.js
+└── search-and-replace/
     ├── index.html
-    ├── cuteycat.css
-    └── cuteycat.js
+    └── index.js
 ```
 
 ---
@@ -128,13 +131,28 @@ Dieses Repo wächst mit – neue Mini-Projekte kommen regelmäßig dazu.
 - Duplikatschutz per Namensvergleich
 - Maximal 3 Favoriten möglich
 
+<br>
+
+### 🔍 Search and Replace
+
+> 🛡️ **`escapeRegExp`** – Sonderzeichen im Suchbegriff werden escaped bevor sie in den regulären Ausdruck fließen – verhindert unerwartete Matches bei Eingaben wie `.` oder `*`
+
+> 🔄 **`currentText` als Datenquelle** – der aktuelle Textzustand wird separat vom DOM gehalten, sodass Highlighting und Ersetzen immer auf sauberen Textdaten arbeiten
+
+- Echtzeit-Suche mit Highlighting aller Treffer per `input`-Event
+- Erstes oder alle Vorkommen ersetzen per `RegExp` mit `i`- bzw. `gi`-Flag
+- Verbleibende Treffer bleiben nach dem Ersetzen markiert
+- Leeres Suchfeld entfernt alle Markierungen korrekt
+- `init()` als Einstiegspunkt – registriert alle Event Listener
+
 ---
 
 ## 🛠️ Technologien
 - **HTML5** – semantisches Markup, `<progress>`-Element, `<button>` für Navigation
-- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener, Tastaturevents, `disabled`, `createElement`, `appendChild`, `insertBefore`, `closest()`, `cloneNode()`
+- **JavaScript (ES6+)** – Destructuring, Default-Parameter, DOM-Manipulation, `setTimeout`, Rekursion, Arrow Functions, `map()`, `join()`, `filter()`, `forEach()`, `classList`, Block-Scoping, Event Listener, Tastaturevents, `disabled`, `createElement`, `appendChild`, `insertBefore`, `closest()`, `cloneNode()`, `RegExp`, `innerHTML`, `textContent`, `trim()`
 - **CSS3** – CSS Grid, `::after`, `classList`-basiertes Highlighting, `progress`-Styling
 - **Bootstrap 5** – Card-Layout, Button-Styling (Profile Cards & Delay Button)
+- **Tailwind CSS** – Layout (Search and Replace)
 
 ---
 
