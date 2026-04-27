@@ -39,9 +39,9 @@ const search = (searchTerm) => {
     return;
   }
 
-  // Alle Vorkommen (case-insensitiv) mit einem gelben <span> umschließen
+  // Alle Vorkommen mit einem gelben <span> umschließen
   contentElement.innerHTML = currentText.replace(
-    new RegExp(escapeRegExp(searchTerm), 'gi'),
+    new RegExp(escapeRegExp(searchTerm), 'g'),
     `<span style="background-color: yellow">${searchTerm}</span>`
   );
 };
@@ -56,8 +56,8 @@ const replaceText = (searchTerm, replaceTerm, shouldReplaceAll) => {
   // Leere oder nur Leerzeichen enthaltende Eingaben ignorieren
   if (!searchTerm.trim()) return;
 
-  // Flag bestimmen: 'gi' = global + case-insensitiv, 'i' = nur erstes + case-insensitiv
-  const flag = shouldReplaceAll ? 'gi' : 'i';
+  // Flag bestimmen: 'g' = alle ersetzen, '' = nur erstes Vorkommen
+  const flag = shouldReplaceAll ? 'g' : '';
 
   // Arbeitskopie des Textes aktualisieren
   currentText = currentText.replace(new RegExp(escapeRegExp(searchTerm), flag), replaceTerm);
